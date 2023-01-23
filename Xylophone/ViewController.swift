@@ -6,16 +6,28 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+//MARK: Properties
+    var audioPlayer = AVAudioPlayer()
 
+//MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+//MARK: Buttons
     @IBAction func keyPessed(_ sender: UIButton) {
-        print("Kye button is pressed")
+        playSound()
+    }
+    
+//MARK: Functions
+    func playSound() {
+        let sound = Bundle.main.url(forResource: "C", withExtension: "wav")
+        audioPlayer = try! AVAudioPlayer(contentsOf: sound!)
+        audioPlayer.play()
     }
 
 }
