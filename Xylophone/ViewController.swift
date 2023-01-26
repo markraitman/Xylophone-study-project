@@ -20,12 +20,12 @@ class ViewController: UIViewController {
 
 //MARK: Buttons
     @IBAction func keyPessed(_ sender: UIButton) {
-        playSound()
+        playSound(soundName: sender.currentTitle!)
     }
     
 //MARK: Functions
-    func playSound() {
-        let sound = Bundle.main.url(forResource: "C", withExtension: "wav")
+    func playSound(soundName: String) {
+        let sound = Bundle.main.url(forResource: soundName, withExtension: "wav")
         audioPlayer = try! AVAudioPlayer(contentsOf: sound!)
         audioPlayer.play()
     }
