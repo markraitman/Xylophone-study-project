@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 //MARK: Buttons
     @IBAction func keyPessed(_ sender: UIButton) {
         playSound(soundName: sender.currentTitle!)
+        sender.alpha = 0.5
     }
     
 //MARK: Functions
