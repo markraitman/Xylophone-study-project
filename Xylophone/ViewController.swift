@@ -10,15 +10,15 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     var audioPlayer = AVAudioPlayer()
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    //MARK: Buttons
+    //MARK: - Buttons
     @IBAction func keyPessed(_ sender: UIButton) {
         playSound(soundName: sender.currentTitle!)
         sender.alpha = 0.5
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK: Functions
+    //MARK: - Functions
     func playSound(soundName: String) {
         let sound = Bundle.main.url(forResource: soundName, withExtension: "wav")
         audioPlayer = try! AVAudioPlayer(contentsOf: sound!)
